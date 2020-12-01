@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Q3 extends Actor
+public class Q3 extends Blockers
 {
     /**
      * Act - do whatever the Q3 wants to do. This method is called whenever

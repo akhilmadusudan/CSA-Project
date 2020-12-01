@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
+    int speed = 5;
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,18 +16,38 @@ public class Player extends Actor
     public void act() 
     {
         moveAround();
+        hitWalls();
     }    
-    public void moveAround()
+   public void moveAround()
     {
+        int x = getX();
+        int y = getY();
         if(Greenfoot.isKeyDown("d"))
         {
-            setRotation(0);
-            move(4);
+            setLocation(x + speed, y);
+            if(hitWalls())
+            {
+                setLocation(x - speed, y);
+            }
         }
         if(Greenfoot.isKeyDown("a"))
         {
-            setRotation(180);
-            move(4);
+            setLocation(x - speed, y);
+            if(hitWalls())
+            {
+                setLocation(x + speed, y);
+            }
+        }
+    }
+    public boolean hitWalls()
+    {
+        if(isTouching(Blockers.class))
+        {
+            return(true);
+        }
+        else
+        {
+            return(false);
         }
     }
 }
