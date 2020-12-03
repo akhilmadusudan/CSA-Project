@@ -50,4 +50,16 @@ public class Player extends Actor
             return(false);
         }
     }
+     public void promptQ()
+    {
+        
+         
+        if (isTouching(Q1.class))
+        {
+          String inputValue = JOptionPane.showInputDialog("China is the most populated country in the world"); 
+        }
+            if (inputValue == "true") {
+                System.out.println("Nice");
+            }
+      }            
 }
